@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.main {
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 1%;
+}
+
+.fontColor{
+    color: beige;
+}
+.warningColor{
+    color: gold;
+}
+
+.fieldSize-small {
+	width: 100px;
+}
+
+.bgcol1 {
+	background-color: #2ecc40;
+}
+.bgcol2 {
+	background-color: #ffCc0;
+}
+.bgcol3 {
+	background-color: #649018;
+}
+.fontColor{
+    color: beige;
+}
+.warningColor{
+    color: gold;
+}
+.bgImage{
+    background-image: url("/rsc/lottery_green.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
