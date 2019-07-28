@@ -1,0 +1,14 @@
+body {
+	background-color: seagreen;
+	color: silver;
+	font-family: monospace;
+}
+.dataT {
+	width: 150px;
+	height: 200px;
+	margin-top: 10px;
+	margin-left: 15px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+}
