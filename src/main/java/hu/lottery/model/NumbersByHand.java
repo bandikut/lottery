@@ -138,11 +138,11 @@ public class NumbersByHand implements Serializable {
 		this.lotteryWeeklyDrawData = lotteryWeeklyDrawData;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "NumbersByHand [id=" + id + ", num1=" + num1 + ", num2=" + num2 + ", num3=" + num3 + ", num4=" + num4
-//				+ ", num5=" + num5 + ", num6=" + num6 + ", num7=" + num7;
-//	}
+	@Override
+	public String toString() {
+		return "NumbersByHand [id=" + id + ", num1=" + num1 + ", num2=" + num2 + ", num3=" + num3 + ", num4=" + num4
+				+ ", num5=" + num5 + ", num6=" + num6 + ", num7=" + num7;
+	}
 
 
 

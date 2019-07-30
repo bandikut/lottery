@@ -1,7 +1,5 @@
 package hu.lottery.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -9,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import hu.lottery.model.NumbersByHand;
 import hu.lottery.service.LotteryWeeklyService;
 import hu.lottery.service.NumbersByHandService;
 
@@ -24,22 +21,11 @@ public class IndexController {
 
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public ModelAndView get() throws Exception {
-
 		ModelMap modelMap = new ModelMap();
-
-		modelMap.put("allRecord", lotteryWeeklyService.getAllDrawingData());
-//		System.out.println("% get all data " + lotteryWeeklyService.getAllDrawingData().toString());
-//		System.out.println("++all data from db++");
-//		System.out.println(modelMap.toString());
-	
-		System.out.println("--all draws by hand--");
-//		List<NumbersByHand> list= numbersByHandService.getAllNumsByHand();
-//		for (NumbersByHand numbersByHand : list) {
-//			System.out.println(numbersByHand.toString());
-//		}
-		
+		modelMap.put("allRecord", lotteryWeeklyService.getAllDrawingData());	
+		System.out.println("++all record from lottery weekly draws++"+lotteryWeeklyService.getAllDrawingData()+toString());
 		modelMap.put("hand",numbersByHandService.getAllNumsByHand());
-		System.out.println(numbersByHandService.getAllNumsByHand().toString());
+		System.out.println("--all draws by hand--"+numbersByHandService.getAllNumsByHand().toString() );
 		return new ModelAndView("index", modelMap);
 
 	}
