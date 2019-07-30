@@ -11,7 +11,6 @@
 
 <body>
 <div class="dataT">
-<h1>blaaaaaaaaaaaaaaaaaaaaaaaa</h1>
 		<h1>All lotto numbers that has been drawn</h1>
 			<table>
 			<tr>
@@ -19,7 +18,6 @@
 				<th>év</th>
 				<th>hét</th>
 				<th>dátum</th>
-				<th>1. winning numbers (by machine)</th>
 				<th>2. winning numbers (by hand)</th>
 			</tr>
 			<c:forEach var="numbers" items="${allRecord}">
@@ -28,8 +26,11 @@
 					<td>${numbers.year}</td>
 					<td>${numbers.week}</td>
 					<td>${numbers.date}</td>
-					<td>empty</td>
-					<td>empty</td>
+					<td>
+<%-- 						<c:forEach var="hand" items="${numbers.numbersByHand}"> --%>
+<%-- 							<c:out value="${hand.num1}"></c:out> --%>
+<%-- 						</c:forEach> --%>
+					</td>
 				</tr>
 			</c:forEach>
 			</table>

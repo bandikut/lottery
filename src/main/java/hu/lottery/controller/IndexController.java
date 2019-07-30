@@ -1,5 +1,7 @@
 package hu.lottery.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import hu.lottery.model.NumbersByHand;
 import hu.lottery.service.LotteryWeeklyService;
 import hu.lottery.service.NumbersByHandService;
 
@@ -30,8 +33,13 @@ public class IndexController {
 //		System.out.println(modelMap.toString());
 	
 		System.out.println("--all draws by hand--");
-		System.out.println(numbersByHandService.toString());
+//		List<NumbersByHand> list= numbersByHandService.getAllNumsByHand();
+//		for (NumbersByHand numbersByHand : list) {
+//			System.out.println(numbersByHand.toString());
+//		}
 		
+		modelMap.put("hand",numbersByHandService.getAllNumsByHand());
+		System.out.println(numbersByHandService.getAllNumsByHand().toString());
 		return new ModelAndView("index", modelMap);
 
 	}

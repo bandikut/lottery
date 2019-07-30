@@ -59,19 +59,18 @@ public class LotteryWeeklyDrawData implements Serializable {
 	@Column(name = "four_prize")
 	private String fourP;
 
-	@Column(name = "id_by_machine")
-	private int byMachine;
-
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_by_hand", referencedColumnName = "id")
 	private NumbersByHand numbersByHand;
+	
+
 
 	public LotteryWeeklyDrawData() {
 		super();
 	}
 
 	public LotteryWeeklyDrawData(int id, int year, int week, String date, int sevenM, String sevenP, int sixM,
-			String sixP, int fiveM, String fiveP, int fourM, String fourP, int byMachine, NumbersByHand numbersByHand) {
+			String sixP, int fiveM, String fiveP, int fourM, String fourP, NumbersByHand numbersByHand) {
 		super();
 		this.id = id;
 		this.year = year;
@@ -85,7 +84,6 @@ public class LotteryWeeklyDrawData implements Serializable {
 		this.fiveP = fiveP;
 		this.fourM = fourM;
 		this.fourP = fourP;
-		this.byMachine = byMachine;
 		this.numbersByHand = numbersByHand;
 	}
 
@@ -185,14 +183,6 @@ public class LotteryWeeklyDrawData implements Serializable {
 		this.fourP = fourP;
 	}
 
-	public int getByMachine() {
-		return byMachine;
-	}
-
-	public void setByMachine(int byMachine) {
-		this.byMachine = byMachine;
-	}
-
 	public NumbersByHand getNumbersByHand() {
 		return numbersByHand;
 	}
@@ -205,7 +195,7 @@ public class LotteryWeeklyDrawData implements Serializable {
 	public String toString() {
 		return "LotteryWeeklyDrawData [id=" + id + ", year=" + year + ", week=" + week + ", date=" + date + ", sevenM="
 				+ sevenM + ", sevenP=" + sevenP + ", sixM=" + sixM + ", sixP=" + sixP + ", fiveM=" + fiveM + ", fiveP="
-				+ fiveP + ", fourM=" + fourM + ", fourP=" + fourP + ", byMachine=" + byMachine + ", numbersByHand="
+				+ fiveP + ", fourM=" + fourM + ", fourP=" + fourP +  ", numbersByHand="
 				+ numbersByHand + "]";
 	}
 
