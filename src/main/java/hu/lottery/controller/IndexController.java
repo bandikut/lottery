@@ -30,6 +30,7 @@ public class IndexController {
 		modelMap.put("smallestPrize", lotteryWeeklyService.smallestWinPrice());
 		modelMap.put("maxWinners", lotteryWeeklyService.maxWinnersOfAWeek());
 		modelMap.put("nobodyWins", lotteryWeeklyService.numbersOfTheNotWinningWeeks());
+		modelMap.put("freq", numbersByHandService.topSevenNumbers());
 		return new ModelAndView("index", modelMap);
 
 	}

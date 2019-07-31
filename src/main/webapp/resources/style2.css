@@ -1,41 +1,43 @@
-html, body {
-  height: 100%;
-}
-
 body {
-	background-color: #158500;
+	/* 	background-color: #158500; */
+	background: linear-gradient(90deg, rgba(188, 255, 60, 1) 0%,
+		rgba(109, 170, 28, 1) 35%, rgba(167, 176, 10, 1) 73%,
+		rgba(109, 170, 28, 1) 100%);
 	color: #094a1a;
-	display: flex;
-	flex-direction: column;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-.content {
-  flex: 1 0 auto;
+.titles {
+	font-family: 'Bangers', cursive;
 }
 
-.footer {
-  flex-shrink: 0;
+.navBarColor {
+	background-color: #ffdd00;
 }
 
 .dataTableStyle {
-	width: 80%;
+	align-self: center;
+	background-color: #6daa1c;
+	width: 90%;
 	height: 80%;
-	overflow-x: hidden;
+	overflow-x: auto;
 	overflow-y: auto;
 }
 
 .topBottomStyle {
-	padding: 50px;
+	padding: 25px;
 	background-color: #ffdd00;
 	align-content: center;
 	text-align: center;
 }
 
 .box {
+	align-content: center;
 	margin-bottom: 1%;
 	margin-left: 20%;
 	margin-right: 20%;
-	margin-top: 1%;	
+	margin-top: 1%;
 }
 
 .emphasizePositive {
@@ -45,5 +47,5 @@ body {
 
 .emphasizeNegative {
 	font-weight: bold;
-	color: #c70808 ;
+	color: #c70808;
 }
