@@ -1,0 +1,12 @@
+sötétzöld:
+#094a1a
+világoszöld háttér
+#35b81d
+középzöld háttér
+#158500
+sárga
+#ffdd00
+hangsúlyozáshoz zöld
+#5cc42f
+hangsúlyozáshoz piros
+#c70808

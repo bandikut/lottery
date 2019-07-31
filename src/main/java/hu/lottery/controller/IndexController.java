@@ -26,6 +26,10 @@ public class IndexController {
 		System.out.println("++all record from lottery weekly draws++"+lotteryWeeklyService.getAllDrawingData()+toString());
 		modelMap.put("hand",numbersByHandService.getAllNumsByHand());
 		System.out.println("--all draws by hand--"+numbersByHandService.getAllNumsByHand().toString() );
+		modelMap.put("biggestPrize", lotteryWeeklyService.biggestWinPrice());
+		modelMap.put("smallestPrize", lotteryWeeklyService.smallestWinPrice());
+		modelMap.put("maxWinners", lotteryWeeklyService.maxWinnersOfAWeek());
+		modelMap.put("nobodyWins", lotteryWeeklyService.numbersOfTheNotWinningWeeks());
 		return new ModelAndView("index", modelMap);
 
 	}

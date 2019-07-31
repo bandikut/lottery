@@ -1,14 +1,49 @@
-body {
-	background-color: seagreen;
-	color: silver;
-	font-family: monospace;
+html, body {
+  height: 100%;
 }
-.dataT {
-	width: 650px;
-	height: 400px;
-	margin-top: 10px;
-	margin-left: 15px;
+
+body {
+	background-color: #158500;
+	color: #094a1a;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+.dataTableStyle {
+	width: 80%;
+	height: 80%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	
+}
+
+.topBottomStyle {
+	padding: 50px;
+	background-color: #ffdd00;
+	align-content: center;
+	text-align: center;
+}
+
+.box {
+	margin-bottom: 1%;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 1%;	
+}
+
+.emphasizePositive {
+	font-weight: bold;
+	color: #5cc42f;
+}
+
+.emphasizeNegative {
+	font-weight: bold;
+	color: #c70808 ;
 }

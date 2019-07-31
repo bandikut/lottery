@@ -41,6 +41,8 @@ public class LotteryWeeklyDrawData implements Serializable {
 	@Column(name = "seven_prize")
 	private String sevenP;
 
+	private Integer derivedSevenP;
+
 	@Column(name = "six_match_count")
 	private int sixM;
 
@@ -62,15 +64,14 @@ public class LotteryWeeklyDrawData implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_by_hand", referencedColumnName = "id")
 	private NumbersByHand numbersByHand;
-	
-
 
 	public LotteryWeeklyDrawData() {
 		super();
 	}
 
-	public LotteryWeeklyDrawData(int id, int year, int week, String date, int sevenM, String sevenP, int sixM,
-			String sixP, int fiveM, String fiveP, int fourM, String fourP, NumbersByHand numbersByHand) {
+	public LotteryWeeklyDrawData(int id, int year, int week, String date, int sevenM, String sevenP,
+			Integer derivedSevenP, int sixM, String sixP, int fiveM, String fiveP, int fourM, String fourP,
+			NumbersByHand numbersByHand) {
 		super();
 		this.id = id;
 		this.year = year;
@@ -78,6 +79,7 @@ public class LotteryWeeklyDrawData implements Serializable {
 		this.date = date;
 		this.sevenM = sevenM;
 		this.sevenP = sevenP;
+		this.derivedSevenP = derivedSevenP;
 		this.sixM = sixM;
 		this.sixP = sixP;
 		this.fiveM = fiveM;
@@ -191,12 +193,27 @@ public class LotteryWeeklyDrawData implements Serializable {
 		this.numbersByHand = numbersByHand;
 	}
 
+	public Integer getDerivedSevenP() {
+		return derivedSevenP;
+	}
+
+	public void setDerivedSevenP(Integer derivedSevenP) {
+		this.derivedSevenP = derivedSevenP;
+	}
+
 	@Override
 	public String toString() {
 		return "LotteryWeeklyDrawData [id=" + id + ", year=" + year + ", week=" + week + ", date=" + date + ", sevenM="
-				+ sevenM + ", sevenP=" + sevenP + ", sixM=" + sixM + ", sixP=" + sixP + ", fiveM=" + fiveM + ", fiveP="
-				+ fiveP + ", fourM=" + fourM + ", fourP=" + fourP +  ", numbersByHand="
-				+ numbersByHand + "]";
+				+ sevenM + ", sevenP=" + sevenP + ", derivedSevenP=" + derivedSevenP + ", sixM=" + sixM + ", sixP="
+				+ sixP + ", fiveM=" + fiveM + ", fiveP=" + fiveP + ", fourM=" + fourM + ", fourP=" + fourP
+				+ ", numbersByHand=" + numbersByHand + "]";
+	}
+	
+	public String toStringForUsers() {
+		return date + ", " + week + ". week, the jackpot was : " + sevenP+ " Ft. There was "+sevenM+ " winner(s), and the jackpot winning numbers were: "+ 
+				numbersByHand.getNum1()+ ", "+numbersByHand.getNum2()+ ", "+numbersByHand.getNum3()+ ", "+
+				numbersByHand.getNum4()+ ", "+numbersByHand.getNum5()+ ", "+numbersByHand.getNum6()+ ", "+
+				numbersByHand.getNum7();
 	}
 
 }
