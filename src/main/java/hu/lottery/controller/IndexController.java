@@ -23,14 +23,14 @@ public class IndexController {
 	public ModelAndView get() throws Exception {
 		ModelMap modelMap = new ModelMap();
 		modelMap.put("allRecord", lotteryWeeklyService.getAllDrawingData());	
-		System.out.println("++all record from lottery weekly draws++"+lotteryWeeklyService.getAllDrawingData()+toString());
+//		System.out.println("++all record from lottery weekly draws++"+lotteryWeeklyService.getAllDrawingData()+toString());
 		modelMap.put("hand",numbersByHandService.getAllNumsByHand());
-		System.out.println("--all draws by hand--"+numbersByHandService.getAllNumsByHand().toString() );
+//		System.out.println("--all draws by hand--"+numbersByHandService.getAllNumsByHand().toString() );
 		modelMap.put("biggestPrize", lotteryWeeklyService.biggestWinPrice());
 		modelMap.put("smallestPrize", lotteryWeeklyService.smallestWinPrice());
 		modelMap.put("maxWinners", lotteryWeeklyService.maxWinnersOfAWeek());
 		modelMap.put("nobodyWins", lotteryWeeklyService.numbersOfTheNotWinningWeeks());
-		modelMap.put("freq", numbersByHandService.topSevenNumbers());
+		modelMap.put("freq", numbersByHandService.orderNumbersByFrequency());
 		return new ModelAndView("index", modelMap);
 
 	}

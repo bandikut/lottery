@@ -135,37 +135,13 @@
 	<div class="card-deck">
 		<div class="card">
 		  <div class="card-body text-center">
-		    <h5><span class="emphasizePositive"><i class="fas fa-arrow-up"></i></span> The biggest winner's jackpot prize</h5>
-		    <h6>${biggestPrize.getSevenP()}</h6>
-		    <p>
-			  <a class="class="badge badge-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-			    Details
-			  </a>
-			</p>
-			<div class="collapse" id="collapseExample">
-			  <div class="card card-body">
-			   ${biggestPrize.toStringForUsers()}
-			  </div>
-			</div>
+		     <h5><span  class="emphasizePositive"><i class="fas fa-pizza-slice"></i></span> The 7 most frequent number</h5>
+		    <c:forEach items="${freq}" var="f" begin="0" end="6">
+		    		${f.key} (x ${f.value}),
+ 			</c:forEach>
 		  </div>
 		</div>
 	
-		<div class="card">
-		  <div class="card-body text-center">
-		     <h5><span  class="emphasizeNegative"><i class="fas fa-arrow-down"></i></span> The smallest winner's jackpot prize</h5>
-		    <h6>${smallestPrize.getSevenP()}</h6>
-		    <p>
-			  <a class="class="badge badge-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-			    Details
-			  </a>
-			</p>
-			<div class="collapse" id="collapseExample">
-			  <div class="card card-body">
-			   ${smallestPrize.toStringForUsers()}
-			  </div>
-			</div>
-		  </div>
-		</div>
 	</div>
 </div>
 
