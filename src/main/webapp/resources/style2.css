@@ -26,18 +26,22 @@ body {
 }
 
 .topBottomStyle {
-	padding: 25px;
+	padding: 35px;
 	background-color: #ffdd00;
 	align-content: center;
 	text-align: center;
 }
 
+.topMargin {
+	margin-top: 40px;
+}
+
 .box {
 	align-content: center;
-	margin-bottom: 1%;
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 1%;
 }
 
 .emphasizePositive {

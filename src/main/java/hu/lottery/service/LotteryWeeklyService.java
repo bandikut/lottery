@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import hu.lottery.model.LotteryWeeklyDrawData;
@@ -31,6 +32,7 @@ public class LotteryWeeklyService {
 		LotteryWeeklyDrawData maxPrize = Collections.max(wholeList, Comparator.comparing(l -> l.getDerivedSevenP()));
 		return maxPrize;
 	}
+	
 	
 	public LotteryWeeklyDrawData smallestWinPrice() {
 		LotteryWeeklyDrawData minPrizeObject = new LotteryWeeklyDrawData();
